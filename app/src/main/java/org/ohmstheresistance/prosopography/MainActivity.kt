@@ -8,30 +8,37 @@ import android.view.inputmethod.InputMethodManager
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
+import androidx.databinding.DataBindingUtil
+import org.ohmstheresistance.prosopography.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 
+    private lateinit var binding: ActivityMainBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
 
-        findViewById<Button>(R.id.done_button).setOnClickListener {
+        binding.doneButton.setOnClickListener {
             addNickName(it)
         }
     }
 
-    private fun addNickName(view: View){
 
-        val nickNameEdittext = findViewById<EditText>(R.id.nickname_editText)
-        val nickNameTextView = findViewById<TextView>(R.id.nickname_textview)
-
-        nickNameTextView.text = nickNameEdittext.text
-        nickNameEdittext.visibility = View.GONE
-        view.visibility = View.GONE
-        nickNameTextView.visibility = View.VISIBLE
+    private fun addNickName(view: View) {
 
 
-        val hideKeyboardWhenDone = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+        binding.apply {
+            invalidateAll()
+            binding.nickNameTextview.text = binding.nickNameEditText.text
+            binding.nickNameEditText.visibility = View.GONE
+            binding.doneButton.visibility = View.GONE
+            binding.nickNameTextview.visibility = View.VISIBLE
+
+        }
+
+        val hideKeyboardWhenDone =
+            getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
         hideKeyboardWhenDone.hideSoftInputFromWindow(view.windowToken, 0)
 
 
