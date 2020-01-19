@@ -31,6 +31,25 @@
         android:inputType="textPersonName"
         android:textAlignment="center" />
 
+    <Button
+        android:id="@+id/done_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_gravity="center_horizontal"
+        android:fontFamily="@font/atma_medium"
+        android:textSize="20dp"
+        android:text="@string/done_button_text" />
+
+    <TextView
+        android:id="@+id/nickname_textview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textAlignment="center"
+        android:visibility="gone"
+        style="@style/NameStyle"/>
+
     <ImageView
         android:id="@+id/star_imageView"
         android:layout_width="match_parent"
