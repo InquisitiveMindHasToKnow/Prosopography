@@ -1,14 +1,12 @@
 <resources>
     <string name="app_name">Prosopography</string>
-    <string name="my_name">Jeremy</string>
     <string name="yellow_star">Yellow Star</string>
-
-    <string name="bio_text">My name is Omar, affectionately known as Jeremy.
-    \n\n My favorite soccer team is Manchester United.
-    \n\n My favorite football team is the New York Giants.
-    \n\n Gaming is my all time favorite hobby.
-    \n\n I like making apps that solve everyday problems.
-    \n\n My all-time favorite tv show is Strike Back. Why? Because it is AWESOME! Also, what a huge let down Game of Thrones turned out to be.
+    <string name="bio_text">‣ My name is Omar, affectionately known as Jeremy.
+    \n\n‣ My favorite soccer team is Manchester United.
+    \n\n‣ My favorite football team is the New York Giants.
+    \n\n‣ Gaming is my all time favorite hobby.
+    \n\n‣ I like making apps that solve everyday problems.
+    \n\n‣ My all-time favorite tv show is Strike Back. Why? Because it is AWESOME! Also, what a huge let down Game of Thrones turned out to be.
     </string>
     <string name="nickname_hint">What is your nickname?</string>
     <string name="done_button_text">Done</string>

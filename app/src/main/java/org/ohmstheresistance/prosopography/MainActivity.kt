@@ -5,15 +5,14 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.view.inputmethod.InputMethodManager
-import android.widget.Button
-import android.widget.EditText
-import android.widget.TextView
 import androidx.databinding.DataBindingUtil
 import org.ohmstheresistance.prosopography.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
+
+    private val myName: MyName = MyName("Jeremy")
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -22,6 +21,8 @@ class MainActivity : AppCompatActivity() {
         binding.doneButton.setOnClickListener {
             addNickName(it)
         }
+
+        binding.myName = myName
     }
 
 
@@ -30,7 +31,10 @@ class MainActivity : AppCompatActivity() {
 
         binding.apply {
             invalidateAll()
-            binding.nickNameTextview.text = binding.nickNameEditText.text
+//            binding.nickNameTextview.text = binding.nickNameEditText.text
+
+            //because binding data directly using the MyName class, the line below does exactly what the commented line above did!
+            myName?.nickname = nickNameEditText.text.toString()
             binding.nickNameEditText.visibility = View.GONE
             binding.doneButton.visibility = View.GONE
             binding.nickNameTextview.visibility = View.VISIBLE
